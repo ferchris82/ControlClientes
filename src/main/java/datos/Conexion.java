@@ -1,4 +1,3 @@
-
 package datos;
 
 import java.sql.Connection;
@@ -8,7 +7,7 @@ import java.sql.SQLException;
 import javax.sql.DataSource;
 import org.apache.commons.dbcp2.BasicDataSource;
 
-public class Conexion {
+public class Conexion {            
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/control_clientes?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
     private static final String JDBC_USER = "root";
     private static final String JDBC_PASSWORD = "root";
@@ -34,6 +33,7 @@ public class Conexion {
             rs.close();
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
+            System.out.println("Error en el método close");
         }
     }
     public static void close(PreparedStatement stmt){
